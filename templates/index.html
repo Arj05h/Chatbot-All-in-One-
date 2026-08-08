@@ -1,1 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MyChatBot AI</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="app-container">
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="chat-header">
+
+        <div class="bot-info">
+
+            <div class="bot-avatar">
+                🤖
+            </div>
+
+            <div>
+
+                <h1>
+                    MyChatBot
+                </h1>
+
+                <div class="status">
+
+                    <span class="status-dot"></span>
+
+                    Gemini AI
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="clearChat"
+            class="clear-button"
+        >
+            Clear
+        </button>
+
+    </header>
+
+
+    <!-- ================= CHAT ================= -->
+
+    <main
+        id="chatMessages"
+        class="chat-messages"
+    >
+
+
+        <div class="message bot-message">
+
+            <div class="avatar">
+                🤖
+            </div>
+
+
+            <div class="message-wrapper">
+
+                <div class="message-bubble">
+    <strong>Hello! 👋</strong>
+
+    <p>
+        I'm <strong>Timepass AI</strong>, your personal assistant.
+        I can help you with a variety of tasks, answer questions,
+        and provide information on a wide range of topics.
+    </p>
+
+    <strong>What can I do?</strong>
+
+    <ul>
+        <li>💬 Answer your questions</li>
+        <li>🖼️ Analyze images</li>
+        <li>📄 Read and analyze PDFs</li>
+        <li>🧠 Answer questions about uploaded files</li>
+        <li>💻 Help with coding and projects</li>
+    </ul>
+</div>
+
+
+                <div class="message-time">
+                    Just now
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- ================= TYPING ================= -->
+
+    <div
+        id="typingIndicator"
+        class="typing-container hidden"
+    >
+
+        <div class="avatar">
+            🤖
+        </div>
+
+        <div class="typing">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FILE PREVIEW ================= -->
+
+    <div
+        id="filePreview"
+        class="file-preview hidden"
+    >
+
+        <div class="file-icon">
+            📎
+        </div>
+
+        <div
+            id="fileName"
+            class="file-name"
+        >
+        </div>
+
+        <button
+            id="removeFile"
+            class="remove-file"
+        >
+            ✕
+        </button>
+
+    </div>
+
+
+    <!-- ================= INPUT ================= -->
+
+    <div class="input-area">
+
+
+        <input
+            type="file"
+            id="fileInput"
+            accept=".jpg,.jpeg,.png,.webp,.gif,.pdf"
+            hidden
+        >
+
+
+        <button
+            id="attachButton"
+            class="attach-button"
+            title="Upload image or PDF"
+        >
+            📎
+        </button>
+
+
+        <input
+            type="text"
+            id="messageInput"
+            placeholder="Ask anything..."
+            autocomplete="off"
+        >
+
+
+        <button
+            id="sendButton"
+            class="send-button"
+        >
+            ➤
+        </button>
+
+
+    </div>
+
+
+    <div class="supported-text">
+
+        Supports JPG, PNG, WEBP, GIF and PDF • Max 50 MB
+
+    </div>
+
+
+</div>
+
+
+<script
+    src="{{ url_for('static', filename='script.js') }}"
+></script>
+
+
+</body>
+
+</html>
